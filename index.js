@@ -12,14 +12,33 @@ console.log('its working');
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
 
+let year2014 = fifaData.filter(e => e["Year"] === 2014);
+let final = year2014.filter(e => e["Stage"] === "Final")
+let homeNameFinal = final[0]["Home Team Name"];
+let awayNameFinal = final[0]["Away Team Name"];
+let homeGoalsFinal = final[0]["Home Team Goals"];
+let awayGoalsFinal = final[0]["Away Team Goals"];
+function getWinnerFinal(){
+    if(homeGoalsFinal > awayGoalsFinal){
+        return homeNameFinal;
+    };
+    if(awayGoalsFinal > homeGoalsFinal){
+        return awayNameFinal;
+    };
+};
+let winnerFinal = getWinnerFinal();
+
+console.log("a: " + homeNameFinal);
+console.log("b: " + awayNameFinal);
+console.log("c: " + homeGoalsFinal);
+console.log("d: " + awayGoalsFinal);
+console.log("e: " + winnerFinal);
+
+
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(/* code here */) {
 
-    /* code here */
-
-};
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
