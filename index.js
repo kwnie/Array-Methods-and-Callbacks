@@ -37,6 +37,11 @@ console.log("e: " + winnerFinal);
 
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
+ 
+let getFinals = fifaData.filter(data => data["Stage"] === "Final");
+console.log(getFinals)
+
+
 
 
 
